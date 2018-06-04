@@ -22,7 +22,7 @@ class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
 
 class handler(http.server.BaseHTTPRequestHandler):
 	def do_GET(self):
-		form='''<!DOCTYPE html><title>Shorten your URL</title><form method="POST" action="http://localhost:8000/"><textarea name="longURI"></textarea><br><textarea name="shortTxt"></textarea><br><button type="submit">Cut it!</button></form>'''
+		form='''<!DOCTYPE html><title>Shorten your URL</title><form method="POST" action="http://localhost:8000/"><textarea rows="3" cols="50" placeholder="Enter here the url" name="longURI"></textarea><br><textarea value="asd" rows="3" cols="50" placeholder="Enter here the new short name you want..."name="shortTxt"></textarea><br><button type="submit">Cut it!</button></form>'''
 		if self.path=="/emptyValues":
 			self.send_response(400)
 			self.send_header("Content-type","text/html; charset:utf-8")
